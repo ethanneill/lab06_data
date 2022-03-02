@@ -1,5 +1,7 @@
 // usestack.cpp - for CS 24 lab practice using stacks
-// NAME(S), DATE
+// Ethan Neill
+// Omar Sanchez
+// 3/1/2022
 
 #include "intstack.h"
 #include <iostream>

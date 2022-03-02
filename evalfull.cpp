@@ -1,5 +1,7 @@
 // evalfull.cpp - evaluates a fully-parenthesized expression
-// NAME(S), DATE
+// Ethan Neill
+// Omar Sanchez
+// 3/1/2022
 
 #include <cstdlib>   // for atof function
 #include <cstdio>    // for sscanf
@@ -26,8 +28,30 @@ bool balanced(char *expression[], int numTokens) {
                       // all of the same operations as the stack from
                       // Step 2 of this lab, but it won't get full
                       // and it can store any type - <char *> here
+    
+    for(int i = 0; i < numTokens; i++){
+        s.push(expression[i]);
+    }
+    
+    int leftP = 0;
+    int rightP = 0;
 
-    return false; // REPLACE THIS return WITH ACTUAL IMPLEMENTATION
+    while(s.empty() == false){
+        if(identify(s.top()) == LEFT){
+            leftP++;
+        }
+        else if(identify(s.top()) == RIGHT){
+            rightP++;
+        }
+        s.pop();
+    }
+    
+    if(leftP == rightP){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 // DO NOT CHANGE ANYTHING BELOW - BUT DO READ IT
